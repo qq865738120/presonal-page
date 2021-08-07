@@ -8,3 +8,7 @@ exports.createPages = ({ actions }) => {
     isPermanent: true,
   })
 }
+
+exports.onCreateDevServer = ({ app }) => {
+  console.log(app);
+}
