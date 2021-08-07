@@ -28,7 +28,7 @@ const ThemeSwitchComponent = ({ onChange }) => {
     }
   `).configYaml.theme;
 
-  const onClick = (currentTheme) => {
+  const onClick = async (currentTheme) => {
     onChange && onChange(currentTheme);
     setCurrentTheme(currentTheme);
     localStorage.setItem("theme", currentTheme);

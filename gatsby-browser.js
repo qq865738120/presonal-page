@@ -24,7 +24,7 @@ const isPC = () => {
   return flag;
 };
 
-(() => {
+const onClientEntry = () => {
   const docEl = document.documentElement;
   const resizeEvt =
     "orientationchange" in window ? "orientationchange" : "resize";
@@ -40,4 +40,6 @@ const isPC = () => {
   if (!document.addEventListener) return;
   window.addEventListener(resizeEvt, recalc, false);
   document.addEventListener("DOMContentLoaded", recalc, false);
-})();
+};
+
+export { onClientEntry };
