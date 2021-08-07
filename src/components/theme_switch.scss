@@ -1,0 +1,43 @@
+.theme-switch-component {
+  background-color: #f7f7f7;
+  border: 2px solid #f0f0f0;
+  border-radius: 3rem;
+  width: 1.05rem;
+  height: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: color 0.3s;
+
+  > i {
+    font-size: 0.4rem;
+    padding: 0.05rem;
+    position: relative;
+    color: #bfbfbf;
+    transition: color 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    cursor: pointer;
+  }
+
+  > .bg {
+    background-color: white;
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    border-radius: 100%;
+    transition: left, background-color 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+}
+
+.theme-switch-component-dark {
+  background-color: #282c33;
+  border-color: #31353e;
+
+  > i {
+    color: #7a808b;
+  }
+
+  > .bg {
+    background-color: #1d2025;
+  }
+}

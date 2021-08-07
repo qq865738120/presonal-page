@@ -2,10 +2,44 @@
 theme:
   light:
     color:
-        main: "#67D5B5"
-        second: "#EE7785"
-  dark:
-    color:
       main: "#67D5B5"
       second: "#EE7785"
+  dark:
+    color:
+      main: "#3b9179"
+      second: "#b8515d"
 
+page:
+  search:
+    - label: "谷歌"
+      url: "https://www.google.com/search"
+      parameter: "q"
+    - label: "百度"
+      url: "https://www.baidu.com/s"
+      parameter: "wd"
+    - label: "必应"
+      url: "https://cn.bing.com/search"
+      parameter: "q"
+
+  collect:
+    - icon: "icon-cunchu"
+      label: "数据中心"
+      url: "https://nas.ddnszwj.top"
+    - icon: "icon-bianji"
+      label: "博客"
+      url: "https://blog.ddnszwj.top"
+    - icon: "icon-yingyin"
+      label: "媒体"
+      url: "https://plex.ddnszwj.top"
+    - icon: "icon-daichuli1"
+      label: "相册"
+      url: "https://photoprism.ddnszwj.top"
+    - icon: "icon-zhanghu"
+      label: "密码库"
+      url: "https://bitwarden.ddnszwj.top"
+    - icon: "icon-xiazai"
+      label: "下载"
+      url: "https://qbit.ddnszwj.top"
+    - icon: "icon-pingtai"
+      label: "Docker"
+      url: "https://portainer.ddnszwj.top"
