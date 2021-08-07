@@ -1,0 +1,11 @@
+# 主题配置
+theme:
+  light:
+    color:
+        main: "#67D5B5"
+        second: "#EE7785"
+  dark:
+    color:
+      main: "#67D5B5"
+      second: "#EE7785"
+
