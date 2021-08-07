@@ -2,12 +2,15 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import "./input.scss";
 import Hotkeys from "react-hot-keys";
+import { isBrowser } from "../utils";
 
 // 搜索组件
 const InputComponent = ({ currentTheme }) => {
-  const myIndex =
-    window !== "undefined" ? localStorage.getItem("searchIndex") : 0;
-  const [searchIndex, setSearchIndex] = React.useState(Number(myIndex) || 0);
+  let myIndex = 0;
+  if (isBrowser()) {
+    myIndex = localStorage.getItem("searchIndex") || 0;
+  }
+  const [searchIndex, setSearchIndex] = React.useState(Number(myIndex));
   const [searchValue, setSearchValue] = React.useState("搜一搜");
   const [inputStyle, setInputStyle] = React.useState({});
   const [searchButtonStyle, setSearchButtonStyle] = React.useState({});
@@ -74,10 +77,13 @@ const InputComponent = ({ currentTheme }) => {
       </div>
 
       <div className="input">
-        <Hotkeys keyName="a+c" onKeyDown={() => {
-          setSearchValue("")
-          inputRef.current.value = ''
-        }}>
+        <Hotkeys
+          keyName="a+c"
+          onKeyDown={() => {
+            setSearchValue("");
+            inputRef.current.value = "";
+          }}
+        >
           <input
             ref={inputRef}
             style={{ ...inputStyle }}

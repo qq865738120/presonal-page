@@ -59,6 +59,7 @@ const ContentBoxComponent = ({ currentTheme }) => {
             setLabelStyle([{}]);
             setIconStyle([{}]);
           }}
+          onClick={() => window.open(item.url)}
         >
           <i style={iconStyle[index]} className={`iconfont ${item.icon}`} />
           <span style={labelStyle[index]}>{item.label}</span>
