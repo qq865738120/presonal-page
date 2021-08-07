@@ -1,5 +1,4 @@
 import "./src/styles/normalize.css";
-// import "@fontsource/open-sans"
 import "./src/styles/common.scss";
 import "./src/styles/icon.scss";
 import "./src/styles/iconfont.scss";
@@ -31,8 +30,9 @@ const onClientEntry = () => {
   const recalc = () => {
     const clientWidth = docEl.clientWidth;
     if (!clientWidth) return;
+    console.log('isPC', isPC());
     if (isPC()) {
-      docEl.style.fontSize = "100px";
+      docEl.style.fontSize = clientWidth / 32 + "px";
     } else {
       docEl.style.fontSize = 100 * (clientWidth / 750) + "px";
     }
