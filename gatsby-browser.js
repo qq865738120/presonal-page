@@ -5,23 +5,17 @@ import "./src/styles/iconfont.scss";
 import React from "react";
 import { Provider } from "react-redux";
 import createStore from "./src/state/createStore";
-import { HotKeys } from "react-hotkeys";
 
 export const onInitialClientRender = () => {};
 
 const keyMap = {
   SNAP_LEFT: "command+left",
-  DELETE_NODE: ["a+s", "backspace", 'a+enter']
+  DELETE_NODE: ["a+s", "backspace", "a+enter"],
 };
 export const wrapRootElement = ({ element }) => {
   // Instantiating store in `wrapRootElement` handler ensures:
   //  - there is fresh store for each SSR page
   //  - it will be called only once in browser, when React mounts
   const store = createStore();
-  return (
-    <Provider store={store}>
-      {/* <HotKeys keyMap={keyMap} root>{element}</HotKeys> */}
-      {element}
-    </Provider>
-  );
+  return <Provider store={store}>{element}</Provider>;
 };
