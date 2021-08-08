@@ -1,19 +1,25 @@
+# 项目配置
+configuration:
+  default: # 默认配置
+    theme: 'light' # 主题，light或者dark
+
 # 主题配置
 theme:
-  light:
+  light: # 亮色主题
     color:
-      main: "#67D5B5"
-      second: "#EE7785"
-  dark:
+      main: "#67D5B5" # 主题色
+      second: "#EE7785" # 辅助色
+  dark: # 黑暗主题
     color:
       main: "#3b9179"
       second: "#b8515d"
 
+# 页面内容配置
 page:
-  search:
-    - label: "谷歌"
-      url: "https://www.google.com/search"
-      parameter: "q"
+  search: # 搜索栏
+    - label: "谷歌" # 搜索类型文案
+      url: "https://www.google.com/search" # 搜索网站url
+      parameter: "q" # 搜索参数
     - label: "百度"
       url: "https://www.baidu.com/s"
       parameter: "wd"
@@ -21,10 +27,10 @@ page:
       url: "https://cn.bing.com/search"
       parameter: "q"
 
-  collect:
-    - icon: "icon-cunchu"
-      label: "数据中心"
-      url: "https://nas.ddnszwj.top"
+  collect: # 收藏
+    - icon: "icon-cunchu" # 图标，项目中已经默认添加了40个彩色图标，需要更换图标请替换src/styles/iconfont.scss文件
+      label: "数据中心" # 文案
+      url: "https://nas.ddnszwj.top" # 网站url
     - icon: "icon-bianji"
       label: "博客"
       url: "https://blog.ddnszwj.top"

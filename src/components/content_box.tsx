@@ -1,12 +1,13 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import "./content_box.scss";
+import { useSelector } from 'react-redux';
 
 // 搜索组件
-const ContentBoxComponent = ({ currentTheme }) => {
+const ContentBoxComponent = () => {
   const [labelStyle, setLabelStyle] = React.useState([{}]);
   const [iconStyle, setIconStyle] = React.useState([{}]);
-
+  const currentTheme = useSelector(state => state.theme);
   const themeAndSearch = useStaticQuery(graphql`
     query QueryThemeAndCollect {
       configYaml {
@@ -34,10 +35,9 @@ const ContentBoxComponent = ({ currentTheme }) => {
       }
     }
   `);
-
   const collectList = themeAndSearch.configYaml.page.collect;
   const theme = themeAndSearch.configYaml.theme;
-  const color = theme[currentTheme].color;
+  const color = React.useMemo(() => theme[currentTheme].color, [currentTheme])
 
   return (
     <section

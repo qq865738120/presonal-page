@@ -1,8 +1,18 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: '导航',
+    siteUrl: `https://home.ddnszwj.top`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        components: path.join(__dirname, 'src/components')
+      }
+    },
     {
       resolve: `gatsby-plugin-gatsby-cloud`,
       options: {
@@ -17,10 +27,10 @@ module.exports = {
         generateMatchPathRewrites: false, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/app/*`] },
-    },
+    // {
+    //   resolve: `gatsby-plugin-create-client-paths`,
+    //   options: { prefixes: [`/app/*`] },
+    // },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sass",

@@ -2,44 +2,26 @@ import "./src/styles/normalize.css";
 import "./src/styles/common.scss";
 import "./src/styles/icon.scss";
 import "./src/styles/iconfont.scss";
+import React from "react";
+import { Provider } from "react-redux";
+import createStore from "./src/state/createStore";
+import { HotKeys } from "react-hotkeys";
 
-const isPC = () => {
-  let userAgentInfo = navigator.userAgent;
-  let Agents = [
-    "Android",
-    "iPhone",
-    "SymbianOS",
-    "Windows Phone",
-    "iPad",
-    "iPod",
-  ];
-  let flag = true;
-  for (let v = 0; v < Agents.length; v++) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false;
-      break;
-    }
-  }
-  return flag;
+export const onInitialClientRender = () => {};
+
+const keyMap = {
+  SNAP_LEFT: "command+left",
+  DELETE_NODE: ["a+s", "backspace", 'a+enter']
 };
-
-const onInitialClientRender = () => {
-  // const docEl = document.documentElement;
-  // const resizeEvt =
-  //   "orientationchange" in window ? "orientationchange" : "resize";
-  // const recalc = () => {
-  //   const clientWidth = docEl.clientWidth;
-  //   if (!clientWidth) return;
-  //   console.log('isPC', isPC());
-  //   if (isPC()) {
-  //     docEl.style.fontSize = clientWidth / 32 + "px";
-  //   } else {
-  //     docEl.style.fontSize = 100 * (clientWidth / 750) + "px";
-  //   }
-  // };
-  // if (!document.addEventListener) return;
-  // window.addEventListener(resizeEvt, recalc, false);
-  // document.addEventListener("DOMContentLoaded", recalc, false);
+export const wrapRootElement = ({ element }) => {
+  // Instantiating store in `wrapRootElement` handler ensures:
+  //  - there is fresh store for each SSR page
+  //  - it will be called only once in browser, when React mounts
+  const store = createStore();
+  return (
+    <Provider store={store}>
+      {/* <HotKeys keyMap={keyMap} root>{element}</HotKeys> */}
+      {element}
+    </Provider>
+  );
 };
-
-export { onInitialClientRender };

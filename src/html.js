@@ -15,9 +15,6 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            var name = 'world';
-            console.log('Hello ' + name);
-
               let userAgentInfo = navigator.userAgent;
               let Agents = [
                 "Android",
@@ -35,8 +32,6 @@ export default function HTML(props) {
                 }
               }
 
-            console.log('flag', flag)
-
             const docEl = document.documentElement;
             const resizeEvt =
               "orientationchange" in window ? "orientationchange" : "resize";
@@ -50,7 +45,6 @@ export default function HTML(props) {
             };
             window.addEventListener(resizeEvt, recalc, false);
             document.addEventListener("DOMContentLoaded", recalc, false);
-
         `,
           }}
         />
