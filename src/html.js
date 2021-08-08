@@ -32,19 +32,19 @@ export default function HTML(props) {
                 }
               }
 
-            const docEl = document.documentElement;
-            const resizeEvt =
-              "orientationchange" in window ? "orientationchange" : "resize";
-            const recalc = () => {
-              const clientWidth = docEl.clientWidth;
-              if (flag) {
-                docEl.style.fontSize = clientWidth / 32 + "px";
-              } else {
-                docEl.style.fontSize = 100 * (clientWidth / 750) + "px";
-              }
-            };
-            window.addEventListener(resizeEvt, recalc, false);
-            document.addEventListener("DOMContentLoaded", recalc, false);
+              const docEl = document.documentElement;
+              const resizeEvt =
+                "orientationchange" in window ? "orientationchange" : "resize";
+              const recalc = () => {
+                const clientWidth = docEl.clientWidth;
+                if (flag) {
+                  docEl.style.fontSize = clientWidth / 32 + "px";
+                } else {
+                  docEl.style.fontSize = 100 * (clientWidth / 750) + "px";
+                }
+              };
+              window.addEventListener(resizeEvt, recalc, false);
+              document.addEventListener("DOMContentLoaded", recalc, false);
         `,
           }}
         />
