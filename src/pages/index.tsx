@@ -1,8 +1,8 @@
 import * as React from "react";
-import "./index.scss";
-import InputComponent from "components/input";
-import ThemeSwitchComponent from "components/theme_switch";
-import ContentBoxComponent from "components/content_box";
+import "./home.scss";
+import InputComponent from "../components/input";
+import ThemeSwitchComponent from "../components/theme_switch";
+import ContentBoxComponent from "../components/content_box";
 import { graphql } from "gatsby";
 import backgroundLightImg from "../images/background_light.png";
 import backgroundDarkImg from "../images/background_dark.png";

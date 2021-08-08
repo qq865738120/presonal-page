@@ -2,7 +2,7 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import "./theme_switch.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { ActionType } from "src/state/createStore";
+import { ActionType } from "../state/createStore";
 import { GlobalHotKeys } from "react-hotkeys";
 
 // 搜索组件

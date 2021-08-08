@@ -8,10 +8,6 @@ import createStore from "./src/state/createStore";
 
 export const onInitialClientRender = () => {};
 
-const keyMap = {
-  SNAP_LEFT: "command+left",
-  DELETE_NODE: ["a+s", "backspace", "a+enter"],
-};
 export const wrapRootElement = ({ element }) => {
   // Instantiating store in `wrapRootElement` handler ensures:
   //  - there is fresh store for each SSR page

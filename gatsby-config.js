@@ -6,13 +6,13 @@ module.exports = {
     siteUrl: `https://home.ddnszwj.top`,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-root-import',
-      options: {
-        src: path.join(__dirname, 'src'),
-        components: path.join(__dirname, 'src/components')
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-root-import',
+    //   options: {
+    //     src: path.join(__dirname, 'src'),
+    //     components: path.join(__dirname, 'src/components')
+    //   }
+    // },
     // {
     //   resolve: `gatsby-plugin-gatsby-cloud`,
     //   options: {
