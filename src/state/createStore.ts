@@ -13,7 +13,7 @@ const reducer = (state, action) => {
   return state
 }
 
-const initialState = { theme: 'light' }
+export const initialState = { theme: 'light' }
 
 const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore

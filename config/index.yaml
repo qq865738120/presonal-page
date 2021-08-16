@@ -2,6 +2,8 @@
 configuration:
   default: # 默认配置
     theme: 'light' # 主题，light或者dark
+  site: # 站点设置
+    title: "导航" # 标题
 
 # 主题配置
 theme:
