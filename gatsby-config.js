@@ -35,6 +35,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sass",
+    'gatsby-plugin-mantine',
     "gatsby-transformer-yaml",
     {
       resolve: `gatsby-source-filesystem`,
@@ -51,6 +52,14 @@ module.exports = {
         jsxPragma: `jsx`, // defaults to "React"
         allExtensions: true, // defaults to false
       },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/ // See below to configure properly
+        }
+      }
     },
   ],
 };

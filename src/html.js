@@ -27,7 +27,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               let userAgentInfo = navigator.userAgent;
@@ -62,7 +62,7 @@ export default function HTML(props) {
               document.addEventListener("DOMContentLoaded", recalc, false);
         `,
           }}
-        />
+        /> */}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
