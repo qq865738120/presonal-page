@@ -1,6 +1,5 @@
 import * as React from "react";
 import "./home.scss";
-import { graphql } from "gatsby";
 // import backgroundLightImg from "../images/background_light.png";
 // import backgroundDarkImg from "../images/background_dark.png";
 import Bg1 from "../images/bg-1.svg";
@@ -20,7 +19,6 @@ import {
   Highlight,
 } from "@mantine/core";
 import { Prism } from "@mantine/prism";
-import { isDataView } from "util/types";
 import {
   companyList,
   infoList,
@@ -29,11 +27,12 @@ import {
   schoolList,
   skillList,
 } from "../common/home_data";
-import * as AsciinemaPlayer from "asciinema-player";
 import { useMediaQuery } from "@mantine/hooks";
 import { ResponsiveTreeMap } from "@nivo/treemap";
 import axios from "axios"
 import { useNotifications } from '@mantine/notifications';
+import { isBrowser } from '../utils/index'
+import AsciinemaPlayer from '../lib/asciinema-player'
 
 // markup
 const IndexPage = () => {
@@ -45,11 +44,12 @@ const IndexPage = () => {
 
   React.useEffect(() => {
     const player = [];
-    projectList
+    if (isBrowser()) {
+      projectList
       .filter((item) => item.player)
       .map((item) => {
         player.push(
-          AsciinemaPlayer.create(
+          (AsciinemaPlayer)({}).create(
             `https://asciinema.org/a/${item.player}.cast`,
             document.getElementById(item.player),
             {
@@ -63,9 +63,10 @@ const IndexPage = () => {
           )
         );
       });
+    }
 
     return () => {
-      player.map((item) => item.dispose());
+      player.map((item) => item && item.dispose());
     };
   }, []);
 
@@ -319,7 +320,7 @@ const IndexPage = () => {
           <div className="box-2">
             <h3>ji,neng</h3>
             <div className="content">
-              <ResponsiveTreeMap
+              {isBrowser() && <ResponsiveTreeMap
                 data={skillList}
                 identity="name"
                 value="loc"
@@ -336,7 +337,7 @@ const IndexPage = () => {
                 }}
                 colors={{ scheme: "nivo" }}
                 borderColor="#ffffff"
-              />
+              />}
             </div>
           </div>
           <div className="box-3">

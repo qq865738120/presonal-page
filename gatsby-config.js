@@ -32,19 +32,19 @@ module.exports = {
     //   resolve: `gatsby-plugin-create-client-paths`,
     //   options: { prefixes: [`/app/*`] },
     // },
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
+    // "gatsby-plugin-image",
+    // "gatsby-plugin-sharp",
     "gatsby-plugin-sass",
-    'gatsby-plugin-mantine',
-    "gatsby-transformer-yaml",
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/config`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
-      },
-    },
+    // 'gatsby-plugin-mantine',
+    // "gatsby-transformer-yaml",
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `data`,
+    //     path: `${__dirname}/config`,
+    //     ignore: [`**/\.*`], // ignore files starting with a dot
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-typescript`,
       options: {

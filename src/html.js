@@ -1,25 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql, useStaticQuery } from 'gatsby'
 
 export default function HTML(props) {
-
-  const queryResult = useStaticQuery(graphql`
-    query QuerySite {
-      configYaml {
-        configuration {
-          site {
-            title
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <title>{queryResult.configYaml.configuration.site.title}</title>
+        <title>'个人首页'</title>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
